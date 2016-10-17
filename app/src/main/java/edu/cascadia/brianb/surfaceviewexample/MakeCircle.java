@@ -50,6 +50,12 @@ public class MakeCircle extends Thread {
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
                         //TODO Draw using the Canvas
+                        int z = x;
+                        int v = y;
+                        canvas.drawLine((float)z, (float)v, 600, 600, paint);
+                        canvas.drawCircle((float)z,(float)v,radius, paint);
+
+
 
                     }
                 }
