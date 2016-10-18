@@ -2,6 +2,8 @@ package edu.cascadia.brianb.surfaceviewexample;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.view.SurfaceHolder;
 
 import java.util.Random;
@@ -14,6 +16,7 @@ public class MakeCircle extends Thread {
     private SurfaceHolder surfaceHolder; // for manipulating canvas
     private boolean threadIsRunning = true; // running by default
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private ShapeDrawable mDrawable;
     Random random = new Random();
     Canvas canvas = null;
 
@@ -49,7 +52,15 @@ public class MakeCircle extends Thread {
                         int b = random.nextInt(255);
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
-                        //TODO Draw using the Canvas
+                        mDrawable = new ShapeDrawable((new OvalShape()));
+                        mDrawable.setBounds(x,y, x + radius, y + radius);
+                        mDrawable.getPaint().setColor(0xff000000 + (r << 16) + (g << 8) + b);
+                        mDrawable.draw(canvas);
+
+
+
+
+
 
                     }
                 }
