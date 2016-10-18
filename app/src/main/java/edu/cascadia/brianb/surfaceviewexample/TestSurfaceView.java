@@ -33,7 +33,7 @@ public class TestSurfaceView extends AppCompatActivity {
         public MySurfaceView(Context context) {
             super(context);
             surfaceHolder = getHolder();
-            surfaceHolder.addCallback(this);
+            surfaceHolder.addCallback(this);    //Pay attentions
         }
 
         @Override
