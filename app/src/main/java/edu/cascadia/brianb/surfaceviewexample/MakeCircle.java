@@ -41,20 +41,22 @@ public class MakeCircle extends Thread {
 
                         int w = canvas.getWidth();
                         int h = canvas.getHeight();
-                        int x = random.nextInt(w - 1);
-                        int y = random.nextInt(h - 1);
-                        int radius = random.nextInt(200);
+                        float x = (float)random.nextInt(w - 1);
+                        float y = (float)random.nextInt(h - 1);
+                        float radius = (float)random.nextInt(200);
                         int r = random.nextInt(255);
                         int g = random.nextInt(255);
                         int b = random.nextInt(255);
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
-                        //TODO Draw using the Canvas
-
+                        // Draw using the Canvas
+                        canvas.drawCircle(x, y, radius, paint);
+                        Thread.sleep(200);
                     }
                 }
-            }
-            finally {
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
                 if(canvas!=null)
                 {
                     surfaceHolder.unlockCanvasAndPost(canvas);
