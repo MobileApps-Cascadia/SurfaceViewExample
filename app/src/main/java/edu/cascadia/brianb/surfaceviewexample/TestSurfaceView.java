@@ -30,7 +30,7 @@ public class TestSurfaceView extends AppCompatActivity {
         SurfaceHolder surfaceHolder;
         volatile boolean running = false;
 
-        public MySurfaceView(Context context) {
+        public MySurfaceView(TestSurfaceView context) {
             super(context);
             surfaceHolder = getHolder();
             surfaceHolder.addCallback(this);

@@ -49,7 +49,8 @@ public class MakeCircle extends Thread {
                         int b = random.nextInt(255);
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
-                        //TODO Draw using the Canvas
+                        //Draw circles using the Canvas
+                        canvas.drawCircle(x,y,radius,paint);
 
                     }
                 }
