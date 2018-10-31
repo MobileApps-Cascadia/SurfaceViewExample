@@ -50,7 +50,9 @@ public class MakeCircle extends Thread {
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
                         //TODO Draw using the Canvas
-                        canvas.drawColor(paint.getColor());
+                        canvas.drawRect(x, y, x+10, y+10, paint);
+                        canvas.drawLine(0, 0, x, y, paint);
+
                     }
                 }
             }
@@ -59,6 +61,12 @@ public class MakeCircle extends Thread {
                 {
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
+            }
+            try {
+                Thread.sleep(500);
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
