@@ -2,6 +2,7 @@ package edu.cascadia.brianb.surfaceviewexample;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.SurfaceHolder;
 
 import java.util.Random;
@@ -37,7 +38,7 @@ public class MakeCircle extends Thread {
                 synchronized (surfaceHolder) {
                     if(canvas!=null) {
                         paint.setStyle(Paint.Style.STROKE);
-                        paint.setStrokeWidth(5);
+                        paint.setStrokeWidth(50);
 
                         int w = canvas.getWidth();
                         int h = canvas.getHeight();
@@ -49,7 +50,12 @@ public class MakeCircle extends Thread {
                         int b = random.nextInt(255);
                         paint.setColor(0xff000000 + (r << 16) + (g << 8) + b);
 
-                        //TODO Draw using the Canvas
+                        canvas.drawCircle(x,y,radius,paint);
+                        try {
+                            Thread.sleep(400);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 }
