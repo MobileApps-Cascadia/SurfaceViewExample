@@ -55,6 +55,8 @@ paint.setStrokeWidth(10);
 canvas.drawCircle(canvas.getHeight()/2, 700, canvas.getWidth()/4, paint);
 
 
+                        canvas.drawCircle(canvas.getHeight()/2, 2000, canvas.getWidth()/4, paint);
+
                     }
                 }
             }
